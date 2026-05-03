@@ -1,19 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
+import { useEffect, useState } from 'react'
 import './App.css'
+import authService from './appwrite/auth';
+import { useDispatch } from 'react-redux';
+import { login, logout } from './Slices/authSlice';
+import { Header , Footer } from './components';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+const [loading,setLoading] = useState(true);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    authService.getUserSession()
+    .then((userData) => {
+      if(userData) {
+        dispatch(login({userData}))
+      } else {
+        dispatch(logout())
+      }
+    })
+    .finally(() => setLoading(false))
+    
+  },[])
+
   
 
-  return (
-    <>
-      <h1 className='text-blue-600'>Blog App</h1>
-      
-    </>
-  )
+  return !loading ? (
+    <div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+      <div className='w-full block'>
+        <Header />
+        <main>
+
+        </main>
+        <Footer />
+      </div>
+
+    </div>
+  ) : null
 }
 
 export default App
