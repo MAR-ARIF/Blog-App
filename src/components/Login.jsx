@@ -22,6 +22,7 @@ function Login(){
                 const data = await authService.getUserSession()
                 if (data){
                     dispatch (authLogin(data))
+                    navigate("/")
                 }
             }
 
