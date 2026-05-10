@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import databaseService from "../appwrite/database";
 import storageService from "../appwrite/storage";
 import Container from "../components/Container/Container";
