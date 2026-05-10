@@ -5,7 +5,7 @@ import storageService from "../appwrite/storage";
 import Container from "../components/Container/Container";
 import { useSelector } from "react-redux";
 import { Button } from "../components";
-import { parse } from "html-react-parser";
+import parse from "html-react-parser";
 
 function PostPage(){
     const [post, setPost] = useState(null);

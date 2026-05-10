@@ -1,8 +1,12 @@
-function Footer(){
-    return (
-        <>
-        
-        </>
-    )
+
+
+function Footer() {
+  return (
+    <>
+   
+    
+    </>
+  )
 }
+
 export default Footer
