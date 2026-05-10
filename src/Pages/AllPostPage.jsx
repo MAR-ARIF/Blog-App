@@ -8,7 +8,8 @@ function AllPostPage(){
 
     useEffect(() => {
         databaseService.getPosts().then((posts) => {
-            setPosts(posts.documents);
+            if(posts) setPosts(posts.documents);
+            
         })
     },[])
 
