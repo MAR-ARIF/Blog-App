@@ -1,6 +1,6 @@
-import { useId } from "react"
+import { forwardRef, useId } from "react"
 
-function Select({
+const Select = forwardRef(function Select({
     label,
     options,
     className,
@@ -10,7 +10,7 @@ function Select({
     return (
         
         <div className="w-full">
-            {label && <label className="" htmlFor={id}></label>}
+            {label && <label className="" htmlFor={id}>{label}</label>}
             <select 
             {...props}
             id={id}
@@ -26,5 +26,5 @@ function Select({
         </div>
 
     )
-}
-export default React.forwardRef(Select)
+})
+export default Select

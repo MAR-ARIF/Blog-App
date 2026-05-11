@@ -16,14 +16,24 @@ function SignUp(){
 
     const createUser = async(userData) => {
         try {
+            console.log("1 - button clicked", userData)
             const session = await authService.createAccount(userData)
+            console.log("2 - session result", session)
+            
+
             if(session){
                 const data = await authService.getUserSession()
-                if(data) dispatch(login(data))
-                navigate("/")
-            }
+                console.log("3 - getUserSession result", data)
+                if(data){
+                     dispatch(login(data))
+                     navigate("/")
+                }
+
+                }
+                
             
         } catch (error) {
+            console.log("Error",error)
             setError(error.message)
             
         }
@@ -60,11 +70,7 @@ function SignUp(){
                             placeholder="Enter your email"
                             type="email"
                             {...register("email", {
-                            required: true,
-                            validate: {
-                                matchPattern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                                "Email address must be a valid address",
-                                }
+                            required: true
                             })}
                         />
                         <Input
@@ -72,12 +78,7 @@ function SignUp(){
                             placeholder="Enter your password "
                             type="password"
                             {...register("password",{
-                                required: true,
-                                validate: {
-                                    matchPattern: (value) => /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(value) || 
-                                    "Password must contain uppercase, number, special character and be at least 8 characters"
-
-                                }
+                                required: true
                             })}
                         />
                         <Button className="w-full" type="submit">

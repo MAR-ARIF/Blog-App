@@ -16,7 +16,7 @@ const [loading,setLoading] = useState(true);
     authService.getUserSession()
     .then((userData) => {
       if(userData) {
-        dispatch(login({userData}))
+        dispatch(login(userData))
       } else {
         dispatch(logout())
       }

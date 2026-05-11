@@ -1,7 +1,7 @@
-import { useId } from "react"
-import React from "react"
+import { forwardRef, useId } from "react"
 
-function Input({
+
+const Input = forwardRef(function Input({
     label,
     type="text",
     className = "",
@@ -27,5 +27,5 @@ function Input({
             />   
         </div>
     )
-}
-export default React.forwardRef(Input)
+})
+export default Input

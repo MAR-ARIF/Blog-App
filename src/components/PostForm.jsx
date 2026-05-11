@@ -7,6 +7,7 @@ import { useCallback, useEffect } from "react";
 import Input from "./Input";
 import RTE from "./RTE";
 import Button from "./Button";
+import Select from "./Select";
 
 function PostForm({post}){
 

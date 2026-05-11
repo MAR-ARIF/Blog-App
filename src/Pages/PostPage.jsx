@@ -9,7 +9,7 @@ import parse from "html-react-parser";
 
 function PostPage(){
     const [post, setPost] = useState(null);
-    const slug = useParams()
+    const {slug} = useParams()
     const navigate = useNavigate()
 
     const userData = useSelector((state) => state.auth.userData);
@@ -17,7 +17,7 @@ function PostPage(){
 
     useEffect(() => {
         if(slug){
-            databaseService.getPost().then((post) => {
+            databaseService.getPost(slug).then((post) => {
                 if (post) setPost(post)
                 else navigate("/")
             })
