@@ -42,7 +42,7 @@ function PostForm({post}){
 
             if(file){
                 data.featuredImage = file.$id;
-                const dbPost = await databaseService.createPost({...data,userId: userData.$id });
+                const dbPost = await databaseService.createPost({...data,userId: userData.$id, userName: userData.name });
                 if (dbPost){
                     navigate(`/post/${dbPost.$id}`)
                 }
@@ -55,7 +55,7 @@ function PostForm({post}){
     const slugTransform = useCallback((value) => {
         if (value && typeof value === "string"){
             return value.trim().toLocaleLowerCase().replace(/[^a-zA-Z\d\s]+/g, "-")
-                .replace(/\s/g, "-");
+                .replace(/\s/g, "-").substring(0,36);   
 
         }
         return "";
