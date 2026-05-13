@@ -22,7 +22,7 @@ export class DatabaseService{
                     title,
                     content,
                     featuredImage,
-                    stauts,
+                    status,
                     userId
 
                 }
@@ -43,7 +43,7 @@ export class DatabaseService{
                     title,
                     content,
                     featuredImage,
-                    stauts,
+                    status,
                     userId
 
                 }
