@@ -39,19 +39,15 @@ export class StorageService{
             
         }
     }
-    getFilePreview(fileId){
-        try {
-            return this.storage.getFilePreview(
-                conf.appwriteBucketId,
-                fileId
-            )
-
-            
-        } catch (error) {
-            throw error
-            
-            
-        }
+    getFilePreview(fileId) {
+    try {
+        return this.storage.getFileView(
+            conf.appwriteBucketId,
+            fileId
+        ).toString()
+    } catch (error) {
+        console.log("ERROR", error)
+    }
     }
     
 
