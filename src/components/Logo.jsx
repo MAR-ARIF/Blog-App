@@ -2,7 +2,9 @@
 
 function Logo({width = "100px"}){
     return(
-        <div>Logo</div>
+        <div>
+            <img className="w-14 h-14 object-contain" src="/Blogg.png" />
+        </div>
     )
 }
 
