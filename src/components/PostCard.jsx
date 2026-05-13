@@ -4,7 +4,7 @@ import storageService from "../appwrite/storage";
 function PostCard({$id , featuredImage, title,userName}){
     return(
         <Link to={`/post/${$id}`}>
-            <div className="bg-gray-100 p-4 rounded-xl w-full">
+            <div className="bg-gray-100 p-4 rounded-xl w-md md:w-full md:h-full">
                 <div className="w-full flex justify-center mb-4">
                     {featuredImage && (
                         <img
