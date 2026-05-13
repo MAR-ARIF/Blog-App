@@ -11,6 +11,7 @@ function RTE({name,label,control,defaultValue=""}){
             control={control}
             render={({field: {onChange}}) => (
                 <Editor 
+                apiKey={import.meta.env.VITE_TINYMCE_API_KEY}
                 initialValue={defaultValue}
                 init={{
                     initialValue: defaultValue,
