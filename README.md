@@ -14,7 +14,6 @@ Live demo: [blog-app-one-eta-55.vercel.app](https://blog-app-one-eta-55.vercel.a
 - Upload featured images for each post
 - Set posts as active or inactive to control visibility
 - Only logged in users can create or manage posts
-- Anyone can read published posts without an account
 - Slug auto-generates from the post title
 
 ---
