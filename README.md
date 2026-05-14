@@ -1,6 +1,6 @@
 # Blog App
 
-A full stack blog application built with React and Appwrite. Users can create accounts, write and publish blog posts with a rich text editor, upload featured images, and manage their own content.
+A full stack blog application built with React and Appwrite. Users can create accounts, write and publish blog posts with a rich text editor, upload featured images, and manage their own content. This app is deployed on Vercel.
 
 Live demo: [blog-app-one-eta-55.vercel.app](https://blog-app-one-eta-55.vercel.app/)
 
@@ -30,6 +30,7 @@ Live demo: [blog-app-one-eta-55.vercel.app](https://blog-app-one-eta-55.vercel.a
 | TinyMCE | Rich text editor for writing posts |
 | Tailwind CSS | Styling |
 | Vite | Build tool |
+| Vercel | Deployment |
 
 ---
 
