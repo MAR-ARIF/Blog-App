@@ -1,48 +1,37 @@
-import { useEffect, useState } from "react";
-import databaseService from "../appwrite/database";
+
+
+import { useSelector } from "react-redux";
 import Container from "../components/Container/Container";
-import PostCard from "../components/PostCard";
+
 
 function HomePage(){
-    const [posts, setPosts] = useState([])
-    useEffect(()=> {
-        databaseService.getPosts().then((posts) => {
-            if (posts){
-                setPosts(posts.documents);
-            }
-        })
-    },[])
+    const userData = useSelector((state) => state.auth.userData);
 
-    if(posts.length === 0){
+   
+
+    if(!userData){
         return (
-            <div className="w-full py-8 mt-4 text-center">
+            <div className="w-full h-96 flex items-center justify-center">
                 <Container>
-                    <div className="flex flex-wrap">
-                        <div className="p-2 w-full">
-                            <h1 className="text-2xl font-bold hover:text-gray-500">Login to read posts</h1>
-                        </div>
-                    </div>
-                    
-                </Container> 
-                    
-                
+                    <h1 className="text-4xl font-bold hover:text-gray-500 text-center">
+                        Login to read posts
+                    </h1>
+                </Container>
             </div>
         )
         
     }
     return (
-        <div className="w-full py-8">
+        <div className="w-full h-96 flex items-center justify-center">
             <Container>
-                <div className="flex flex-wrap">
-                    {posts.map((post) => {
-                        <div key={post.$id} className="p-2 w-1/4">
-                            <PostCard {...post} />
-                        </div>
-                    }) }
-                </div>
+                <h1 className="text-4xl font-bold hover:text-gray-500 text-center">
+                    Welcome to the <span className="text-red-600">Blogg</span>
+                </h1>
+                <h2 className="text-3xl mt-10 text-center">Click on 'All Posts' to see all the available articles <br/>Click on 'Add Posts' to add article.</h2>
             </Container>
         </div>
     )
 
-}
+} 
+
 export default HomePage
